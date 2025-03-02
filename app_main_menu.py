@@ -1,10 +1,19 @@
 class App:
     def __init__(self, car_rep, statistics):
+        """
+        Initializes the App with a car repository and a statistics module.
+
+        :param car_rep: An object responsible for managing car listings.
+        :param statistics: An object responsible for displaying statistics.
+        """
         self.car_rep = car_rep
         self.statistics = statistics
 
     @staticmethod
     def display_menu():
+        """
+        Displays the main menu for the car listing application.
+        """
         print(f"=== Car Listing Menu ===\n"
               f"1. Add new car\n"
               f"2. Search cars\n"
@@ -15,6 +24,10 @@ class App:
               f"0. Exit")
 
     def run_selection(self):
+        """
+        Runs the main loop of the application, allowing users to interact
+        with the car listing system based on menu selections.
+        """
         while True:
             self.display_menu()
             choise = input("Make a selection:\n"
@@ -46,19 +59,37 @@ class App:
                 print(f"Error has occured -> {e}")
 
     def add_car(self):
+        """
+        Calls the add_car method from the car repository to add a new car.
+        """
         self.car_rep.add_car()
 
     def search_cars(self):
+        """
+        Calls the search_cars method from the car repository to search for cars.
+        """
         self.car_rep.search_cars()
 
     def update_car(self):
+        """
+        Calls the update_car method from the car repository to update a car listing.
+        """
         self.car_rep.update_car()
 
     def delete_car(self):
+        """
+        Calls the delete_car method from the car repository to remove a car listing.
+        """
         self.car_rep.delete_car()
 
     def view_all_cars(self):
+        """
+        Calls the view_all_cars method from the car repository to display all listed cars.
+        """
         self.car_rep.view_all_cars()
 
     def view_statistics(self):
+        """
+        Calls the statistics_display method from the statistics module to display car-related statistics.
+        """
         self.statistics.statistics_display()
